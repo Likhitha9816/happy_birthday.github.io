@@ -266,6 +266,16 @@ const animationTimeline = () => {
         rotation: 90
       },
       "+=1"
+    )
+    .staggerTo(
+      "#name span",
+      0.5,
+      {
+        opacity: 1,
+        ease: Expo.easeOut
+      },
+      0.2,  // 0.2 seconds between each word
+      "+=0.5"
     );
 
   // tl.seek("currentStep");
@@ -277,6 +287,15 @@ const animationTimeline = () => {
     tl.restart();
   });
 };
+
+function animateName() {
+  const nameSpans = document.querySelectorAll('#name span');
+  nameSpans.forEach((span, index) => {
+    setTimeout(() => {
+      span.style.opacity = '1';
+    }, index * 500); // 500ms delay between each word
+  });
+}
 
 // Import the data to customize and insert them into page
 const fetchData = () => {

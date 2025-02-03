@@ -297,3 +297,7 @@ body {
     font-weight: lighter;
   }
 }
+
+#name {
+  font-size: 0.6em;
+}
